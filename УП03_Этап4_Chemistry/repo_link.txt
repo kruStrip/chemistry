@@ -1,0 +1,2 @@
+https://github.com/Studio-Kairos/chemistry-backend.git
+https://github.com/Studio-Kairos/chemistry-frontend.git

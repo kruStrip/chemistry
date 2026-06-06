@@ -1,0 +1,4 @@
+Demo-стенд (Docker, локально):
+- Frontend: http://localhost:3000
+- API Health: http://localhost:5000/health
+- Swagger: http://localhost:5000/swagger

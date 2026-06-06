@@ -1,0 +1,7 @@
+NAME                     IMAGE                        COMMAND                  SERVICE      CREATED              STATUS                        PORTS
+chemistry-api-1          chemistry-api                "dotnet Chemistry.ApвЂ¦"   api          26 seconds ago       Up 5 seconds                  0.0.0.0:5000->5000/tcp, [::]:5000->5000/tcp
+chemistry-frontend-1     chemistry-frontend           "/docker-entrypoint.вЂ¦"   frontend     20 seconds ago       Up 4 seconds                  0.0.0.0:3000->80/tcp, [::]:3000->80/tcp
+chemistry-minio-1        quay.io/minio/minio:latest   "/usr/bin/docker-entвЂ¦"   minio        About a minute ago   Up About a minute             0.0.0.0:9000-9001->9000-9001/tcp, [::]:9000-9001->9000-9001/tcp
+chemistry-minio-init-1   quay.io/minio/mc:latest      "/bin/sh /scripts/miвЂ¦"   minio-init   29 seconds ago       Up 17 seconds                 
+chemistry-postgres-1     postgres:15-alpine           "docker-entrypoint.sвЂ¦"   postgres     28 seconds ago       Up 17 seconds (healthy)       0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp
+chemistry-redis-1        redis:7-alpine               "docker-entrypoint.sвЂ¦"   redis        About a minute ago   Up About a minute (healthy)   127.0.0.1:6379->6379/tcp

@@ -1,0 +1,12 @@
+@echo off
+chcp 65001 > nul
+cd /d "%~dp0\.."
+echo ========================================
+echo Общая проверка качества проекта
+echo ========================================
+call scripts\test.bat
+call scripts\api-test.bat
+call scripts\logs-check.bat
+echo.
+echo Проверка завершена. Сохраните скриншот результата.
+exit /b 0

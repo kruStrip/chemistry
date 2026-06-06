@@ -1,0 +1,6 @@
+Тестовый запуск для c:\chemistry\chemistry-backend\tests\Chemistry.UnitTests\bin\Debug\net8.0\Chemistry.UnitTests.dll (.NETCoreApp,Version=v8.0)
+Общее количество тестовых файлов (1), соответствующих указанному шаблону.
+
+Пройден!   : не пройдено     0, пройдено   182, пропущено     0, всего   182, длительность 627 ms. - Chemistry.UnitTests.dll (net8.0)
+
+Доступны обновления рабочей нагрузки. Для получения дополнительных сведений запустите `dotnet workload list`.

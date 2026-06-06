@@ -1,0 +1,4 @@
+# Корневой docker-compose — делегирует в chemistry-backend/deploy
+# Запуск: docker compose up --build  (из папки chemistry/)
+include:
+  - path: chemistry-backend/deploy/docker-compose.yml

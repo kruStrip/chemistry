@@ -1,0 +1,59 @@
+{
+  "info": {
+    "name": "Chemistry API — Stage 4 Smoke",
+    "schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json",
+    "description": "Smoke-запросы для demo-стенда Chemistry (localhost:5000)"
+  },
+  "variable": [
+    { "key": "baseUrl", "value": "http://localhost:5000" }
+  ],
+  "item": [
+    {
+      "name": "Health",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/health"
+      }
+    },
+    {
+      "name": "Courses list",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/courses"
+      }
+    },
+    {
+      "name": "Kits list",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/kits"
+      }
+    },
+    {
+      "name": "Reviews",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/reviews"
+      }
+    },
+    {
+      "name": "Login invalid credentials",
+      "request": {
+        "method": "POST",
+        "header": [{ "key": "Content-Type", "value": "application/json" }],
+        "body": {
+          "mode": "raw",
+          "raw": "{\"email\":\"wrong@test.com\",\"password\":\"wrongpass\"}"
+        },
+        "url": "{{baseUrl}}/api/v1/auth/login"
+      }
+    },
+    {
+      "name": "Course not found",
+      "request": {
+        "method": "GET",
+        "url": "{{baseUrl}}/api/v1/courses/nonexistent-slug-99999"
+      }
+    }
+  ]
+}

@@ -1,0 +1,23 @@
+# Корневой .dockerignore — не копировать мусор при сборке из монорепо
+.git
+.github
+.env
+.env.*
+**/.env
+**/.env.*
+**/node_modules
+**/bin
+**/obj
+**/dist
+**/coverage
+**/__pycache__
+**/.vs
+**/.vscode
+**/.idea
+**/*.log
+**/TestResults
+УП03_*
+docs
+screenshots
+_etap*
+*.docx

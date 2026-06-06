@@ -1,0 +1,20 @@
+=== Результаты проверки запуска (06.06.2026) ===
+
+Backend health:
+{"status":"Healthy","environment":"Development","version":"1.0.0.0"}
+
+Backend unit tests (Chemistry.UnitTests):
+Пройдено: 182, не пройдено: 0
+
+Frontend unit tests (Vitest):
+Test Files: 8 passed (8)
+Tests: 60 passed | 1 skipped (61)
+
+OpenAPI:
+Chemistry API — 67 paths
+
+Frontend dev server:
+VITE v8.0.10 ready — http://localhost:3000/ — HTTP 200
+
+Swagger:
+http://localhost:5000/swagger — доступен

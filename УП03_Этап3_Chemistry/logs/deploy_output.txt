@@ -1,0 +1,167 @@
+========================================
+ Chemistry вЂ” СЂР°Р·РІРµСЂС‚С‹РІР°РЅРёРµ demo-СЃС‚РµРЅРґР°
+========================================
+#1 [internal] load local bake definitions
+#1 reading from stdin 1.38kB 0.1s done
+#1 DONE 0.2s
+
+#2 [api internal] load build definition from Dockerfile
+#2 transferring dockerfile: 485B 0.0s done
+#2 DONE 0.1s
+
+#3 [frontend internal] load build definition from Dockerfile
+#3 transferring dockerfile: 1.39kB 0.0s done
+#3 DONE 0.1s
+
+#4 [frontend internal] load metadata for docker.io/library/node:22-alpine
+#4 ...
+
+#5 [api internal] load metadata for mcr.microsoft.com/dotnet/sdk:8.0
+#5 DONE 0.5s
+
+#4 [frontend internal] load metadata for docker.io/library/node:22-alpine
+#4 DONE 0.5s
+
+#6 [frontend internal] load metadata for docker.io/library/nginx:1.27-alpine
+#6 ...
+
+#7 [api internal] load metadata for mcr.microsoft.com/dotnet/aspnet:8.0
+#7 DONE 0.8s
+
+#8 [api internal] load .dockerignore
+#8 transferring context: 258B 0.0s done
+#8 DONE 0.1s
+
+#9 [api internal] load build context
+#9 DONE 0.0s
+
+#10 [api runtime 1/3] FROM mcr.microsoft.com/dotnet/aspnet:8.0@sha256:19be23fe71e885186495d8da1f2d417e553daaa99e16e5148c5ca3ee2f062512
+#10 resolve mcr.microsoft.com/dotnet/aspnet:8.0@sha256:19be23fe71e885186495d8da1f2d417e553daaa99e16e5148c5ca3ee2f062512
+#10 resolve mcr.microsoft.com/dotnet/aspnet:8.0@sha256:19be23fe71e885186495d8da1f2d417e553daaa99e16e5148c5ca3ee2f062512 0.1s done
+#10 DONE 0.1s
+
+#11 [api build 1/5] FROM mcr.microsoft.com/dotnet/sdk:8.0@sha256:4b1cdaa57eed2cecabcf29bdb9bce11e8ca1c287d39dfd2c8b534663ea94d493
+#11 resolve mcr.microsoft.com/dotnet/sdk:8.0@sha256:4b1cdaa57eed2cecabcf29bdb9bce11e8ca1c287d39dfd2c8b534663ea94d493
+#11 resolve mcr.microsoft.com/dotnet/sdk:8.0@sha256:4b1cdaa57eed2cecabcf29bdb9bce11e8ca1c287d39dfd2c8b534663ea94d493 0.2s done
+#11 DONE 0.2s
+
+#9 [api internal] load build context
+#9 ...
+
+#6 [frontend internal] load metadata for docker.io/library/nginx:1.27-alpine
+#6 DONE 1.3s
+
+#9 [api internal] load build context
+#9 transferring context: 33.98kB 0.3s done
+#9 DONE 0.3s
+
+#12 [frontend internal] load .dockerignore
+#12 transferring context: 129B 0.0s done
+#12 DONE 0.1s
+
+#13 [frontend internal] load build context
+#13 DONE 0.0s
+
+#14 [frontend runtime 1/3] FROM docker.io/library/nginx:1.27-alpine@sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10
+#14 ...
+
+#15 [api build 3/5] COPY . .
+#15 CACHED
+
+#16 [api build 2/5] WORKDIR /src
+#16 CACHED
+
+#17 [api build 4/5] RUN dotnet restore src/Chemistry.Api/Chemistry.Api.csproj
+#17 CACHED
+
+#18 [api build 5/5] RUN dotnet publish src/Chemistry.Api/Chemistry.Api.csproj -c Release -o /app/publish /p:UseAppHost=false
+#18 CACHED
+
+#19 [api runtime 2/3] WORKDIR /app
+#19 CACHED
+
+#20 [api runtime 3/3] COPY --from=build /app/publish .
+#20 CACHED
+
+#14 [frontend runtime 1/3] FROM docker.io/library/nginx:1.27-alpine@sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10
+#14 resolve docker.io/library/nginx:1.27-alpine@sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10
+#14 resolve docker.io/library/nginx:1.27-alpine@sha256:65645c7bb6a0661892a8b03b89d0743208a18dd2f3f17a54ef4b76fb8e2f2a10 0.3s done
+#14 DONE 0.3s
+
+#21 [frontend build 1/6] FROM docker.io/library/node:22-alpine@sha256:8ea2348b068a9544dae7317b4f3aafcdc032df1647bb7d768a05a5cad1a7683f
+#21 resolve docker.io/library/node:22-alpine@sha256:8ea2348b068a9544dae7317b4f3aafcdc032df1647bb7d768a05a5cad1a7683f 0.2s done
+#21 DONE 0.3s
+
+#22 [api] exporting to image
+#22 exporting layers 0.0s done
+#22 exporting manifest sha256:1f02edeedc62ab1391ca9eb15fc036f5b2d00a49e87dcf642ba3bd55de9d8b23 0.0s done
+#22 exporting config sha256:1bba223d1a1fc9f02cecb392e6fd8076d74def4a1824966efbdce0926ead74db 0.0s done
+#22 exporting attestation manifest sha256:5d00332bf9ee16704438d0adc138468e672b59d3a49faa8a8e6dd1164068e463 0.1s done
+#22 exporting manifest list sha256:d2666e10e6105bf86f0e59fcb8f39b5dc316e2a29adc37327624c266d2c9ddae 0.1s done
+#22 naming to docker.io/library/chemistry-api:latest
+#22 naming to docker.io/library/chemistry-api:latest done
+#22 unpacking to docker.io/library/chemistry-api:latest 0.1s done
+#22 ...
+
+#13 [frontend internal] load build context
+#13 transferring context: 18.10kB 0.2s done
+#13 DONE 0.2s
+
+#23 [frontend build 3/6] COPY package*.json ./
+#23 CACHED
+
+#24 [frontend build 4/6] RUN npm ci
+#24 CACHED
+
+#25 [frontend build 6/6] RUN npm run build
+#25 CACHED
+
+#26 [frontend runtime 2/3] COPY docker/nginx/default.conf /etc/nginx/conf.d/default.conf
+#26 CACHED
+
+#27 [frontend build 5/6] COPY . .
+#27 CACHED
+
+#28 [frontend build 2/6] WORKDIR /app
+#28 CACHED
+
+#29 [frontend runtime 3/3] COPY --from=build /app/dist /usr/share/nginx/html
+#29 CACHED
+
+#22 [api] exporting to image
+#22 DONE 0.6s
+
+#30 [frontend] exporting to image
+#30 exporting layers 0.0s done
+#30 exporting manifest sha256:ad7a8b6918e9e32690e62b97d3f9d4a6c818a179e4e7a365027242e54428fb58 0.1s done
+#30 exporting config sha256:806057b4120e3af82a9289da4ebff34194d6d77d908c1e61eca6aab88dde0a10
+#30 exporting config sha256:806057b4120e3af82a9289da4ebff34194d6d77d908c1e61eca6aab88dde0a10 0.0s done
+#30 exporting attestation manifest sha256:b39bc6fbb685f1eb15bf0a8a5e95edf2872545e421d32f7ad88a66f56aa936b7
+#30 exporting attestation manifest sha256:b39bc6fbb685f1eb15bf0a8a5e95edf2872545e421d32f7ad88a66f56aa936b7 0.1s done
+#30 exporting manifest list sha256:ca3286bdcd6da06866556d26bc1cab38700233c6e07aa6f4ccb8347f270e98c2
+#30 exporting manifest list sha256:ca3286bdcd6da06866556d26bc1cab38700233c6e07aa6f4ccb8347f270e98c2 0.1s done
+#30 naming to docker.io/library/chemistry-frontend:latest 0.0s done
+#30 unpacking to docker.io/library/chemistry-frontend:latest
+#30 unpacking to docker.io/library/chemistry-frontend:latest 0.1s done
+#30 DONE 0.7s
+
+#31 [api] resolving provenance for metadata file
+#31 ...
+
+#32 [frontend] resolving provenance for metadata file
+#32 DONE 0.1s
+
+#31 [api] resolving provenance for metadata file
+#31 DONE 0.1s
+
+РЎС‚Р°С‚СѓСЃ РєРѕРЅС‚РµР№РЅРµСЂРѕРІ:
+NAME                     IMAGE                        COMMAND                  SERVICE      CREATED              STATUS                        PORTS
+chemistry-api-1          chemistry-api                "dotnet Chemistry.ApвЂ¦"   api          25 seconds ago       Up 3 seconds                  0.0.0.0:5000->5000/tcp, [::]:5000->5000/tcp
+chemistry-frontend-1     chemistry-frontend           "/docker-entrypoint.вЂ¦"   frontend     19 seconds ago       Up 2 seconds                  0.0.0.0:3000->80/tcp, [::]:3000->80/tcp
+chemistry-minio-1        quay.io/minio/minio:latest   "/usr/bin/docker-entвЂ¦"   minio        About a minute ago   Up About a minute             0.0.0.0:9000-9001->9000-9001/tcp, [::]:9000-9001->9000-9001/tcp
+chemistry-minio-init-1   quay.io/minio/mc:latest      "/bin/sh /scripts/miвЂ¦"   minio-init   28 seconds ago       Up 15 seconds                 
+chemistry-postgres-1     postgres:15-alpine           "docker-entrypoint.sвЂ¦"   postgres     27 seconds ago       Up 15 seconds (healthy)       0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp
+chemistry-redis-1        redis:7-alpine               "docker-entrypoint.sвЂ¦"   redis        About a minute ago   Up About a minute (healthy)   127.0.0.1:6379->6379/tcp
+
+Frontend: http://localhost:3000
+API:      http://localhost:5000/health

@@ -1,0 +1,19 @@
+# Базовый URL API для fetch(). В режиме `npm run dev` удобно совпадает с Vite —
+# запросы идут на тот же origin, а прокси пересылает /api → бекенд (см. VITE_API_PROXY_TARGET).
+VITE_APP_ENV=local
+VITE_API_BASE_URL=http://localhost:3000
+# Куда проксировать префикс /api (локально без Docker — обычно порт API 5000)
+VITE_API_PROXY_TARGET=http://127.0.0.1:5000
+VITE_APP_TITLE=Chemistry Na Easy
+VITE_ENABLE_ANALYTICS=false
+VITE_YANDEX_METRIKA_ID=
+VITE_YM_ID=
+# true — показать SmartCaptcha (нужен ключ; в кабинете Yandex добавьте хосты: прод-домен и при dev — localhost).
+VITE_FEATURE_CAPTCHA=false
+VITE_SMARTCAPTCHA_CLIENT_KEY=
+# Дублирует клиентский ключ, если задан только он (альтернатива — VITE_CAPTCHA_SITE_KEY).
+VITE_CAPTCHA_SITE_KEY=
+VITE_FEATURE_OAUTH=false
+VITE_FEATURE_PAYMENT_SANDBOX=true
+VITE_PAYMENT_PROVIDER=OzonPay
+VITE_MEDIA_BASE_URL=https://s3.xn----otbbarc8bto1f.xn--p1ai

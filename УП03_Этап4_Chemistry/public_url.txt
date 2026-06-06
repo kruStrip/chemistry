@@ -1,0 +1,4 @@
+Frontend (demo): http://localhost:3000
+API Health: http://localhost:5000/health
+Swagger UI: http://localhost:5000/swagger
+API base: http://localhost:5000/api/v1

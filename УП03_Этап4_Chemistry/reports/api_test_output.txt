@@ -1,0 +1,14 @@
+API smoke test 06.06.2026  2:13:30,70 
+ 
+[GET] http://localhost:5000/health -> 200 (ожид. 200) 
+{"status":"Healthy","environment":"Development","version":"1.0.0.0","timestamp":"2026-06-05T23:13:30.808914+00:00"} 
+[GET] http://localhost:5000/api/v1/courses -> 200 (ожид. 200) 
+{"items":[],"page":1,"pageSize":20,"total":0} 
+[GET] http://localhost:5000/api/v1/kits -> 200 (ожид. 200) 
+[] 
+[GET] http://localhost:5000/api/v1/reviews -> 200 (ожид. 200) 
+{"items":[],"page":1,"pageSize":12,"total":0} 
+[POST] http://localhost:5000/api/v1/auth/login -> 401 (ожид. 401) 
+{"type":"https://tools.ietf.org/html/rfc9110#section-15.5.2","title":"Invalid credentials","status":401,"traceId":"00-a4722f2507e2bad08a6118a01a380e17-25fdb38a35b35230-00"} 
+[GET] http://localhost:5000/api/v1/courses/nonexistent-slug-99999 -> 404 (ожид. 404) 
+{"type":"https://tools.ietf.org/html/rfc9110#section-15.5.5","title":"Not Found","status":404,"traceId":"00-3487bb419bb5baf1ffb416db5c4d6fb9-ae19b1045d2212fe-00"} 

@@ -1,0 +1,9 @@
+k6 не установлен в системе (where k6 — not found).
+
+Fallback-замер (curl):
+GET http://localhost:5000/health
+  TTFB: ~38ms
+  total: ~43ms
+
+Для полноценного load-теста: установить k6 и выполнить
+  k6 run tests/load/basic_load.js

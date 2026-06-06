@@ -1,0 +1,55 @@
+COMPOSE_PROJECT_NAME=chemistry
+APP_ENVIRONMENT=local
+ASPNETCORE_ENVIRONMENT=Development
+Swagger__Enabled=true
+Database__ApplyMigrationsOnStartup=true
+Security__EnableRateLimiting=false
+
+# Прод (docker-compose.prod): при true — включает Swagger у API; не оставляйте на постоянно.
+SWAGGER_ENABLED=true
+
+FRONTEND_PORT=3000
+API_PORT=5000
+POSTGRES_PORT=5432
+REDIS_PORT=6379
+MINIO_API_PORT=9000
+MINIO_CONSOLE_PORT=9001
+GRAFANA_PORT=3001
+LOKI_PORT=3100
+STAGING_HTTP_PORT=8080
+STAGING_HTTPS_PORT=8443
+
+POSTGRES_DB=chemistry_db
+POSTGRES_USER=chemistry_user
+POSTGRES_PASSWORD=change_me
+
+# Локальный API с данными с сервера (курсы как на проде):
+# 1) На хосте подними SSH-туннель к Postgres на сервере, например: ssh -N -L 15432:127.0.0.1:5432 user@SERVER
+# 2) Запуск: docker compose -f docker-compose.yml -f docker-compose.remote-db.yml up -d
+# 3) Строку подключения указываешь в одном из вариантов (через host.docker.internal — трафик доходит до туннеля на хосте):
+REMOTE_POSTGRES_CONNECTION_STRING=
+
+REDIS_PASSWORD=change_me
+REDIS_MAXMEMORY=256mb
+
+MINIO_ROOT_USER=change_me
+MINIO_ROOT_PASSWORD=change_me
+MINIO_BUCKET_PHOTOS=photos
+MINIO_BUCKET_VIDEOS=videos
+MINIO_BUCKET_DOCUMENTS=documents
+MEDIA_STORAGE_ENDPOINT=minio:9000
+MEDIA_STORAGE_USE_SSL=false
+MEDIA_STORAGE_PUBLIC_BASE_URL=https://s3.xn----otbbarc8bto1f.xn--p1ai
+
+GRAFANA_ADMIN_USER=admin
+GRAFANA_ADMIN_PASSWORD=change_me
+# Прод: https://grafana.<домен в punycode> — см. deploy/nginx/prod.https.conf
+GRAFANA_ROOT_URL=https://grafana.xn----otbbarc8bto1f.xn--p1ai
+JWT_SECRET=change_me_to_a_32_byte_minimum_random_secret
+# AES-256 ключ (32 байта, base64) для шифрования ПДн в БД (Parent.Phone и т.д.).
+# Генерация: openssl rand -base64 32
+DATA_PROTECTION_KEY=
+BACKUP_RETENTION_DAYS=30
+
+LETSENCRYPT_EMAIL=admin@xn----otbbarc8bto1f.xn--p1ai
+DOMAIN_FRONTEND=xn----otbbarc8bto1f.xn--p1ai

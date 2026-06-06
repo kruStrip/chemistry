@@ -1,0 +1,16 @@
+## main...origin/main
+ M scripts/sync-content-media-to-minio.mjs
+ M src/api/types.ts
+ M src/components/AppFooter.tsx
+ M src/components/layout.tsx
+ M src/components/ui.tsx
+ M src/index.css
+ M src/pages/lendings/course-landing-template/CourseLandingImmersiveTemplate.tsx
+ M src/pages/lendings/ponxim-8-pages/course-details-page.tsx
+ M src/pages/lendings/ponxim-8-pages/home-page.tsx
+ M src/pages/lendings/ponxim-8/ponxim-8-online.tsx
+?? "public/photos/34 task/"
+?? public/photos/organika-lending/
+?? src/lib/fetch-home-reviews-mixed.ts
+?? src/lib/interleave-reviews-by-course.test.ts
+?? src/lib/interleave-reviews-by-course.ts

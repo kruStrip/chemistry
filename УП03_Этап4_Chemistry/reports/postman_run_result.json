@@ -1,0 +1,23 @@
+{
+  "run": [
+    {
+      "line": "[GET] http://localhost:5000/health -> 200 (ожид. 200)"
+    },
+    {
+      "line": "[GET] http://localhost:5000/api/v1/courses -> 200 (ожид. 200)"
+    },
+    {
+      "line": "[GET] http://localhost:5000/api/v1/kits -> 200 (ожид. 200)"
+    },
+    {
+      "line": "[GET] http://localhost:5000/api/v1/reviews -> 200 (ожид. 200)"
+    },
+    {
+      "line": "[POST] http://localhost:5000/api/v1/auth/login -> 401 (ожид. 401)"
+    },
+    {
+      "line": "[GET] http://localhost:5000/api/v1/courses/nonexistent-slug-99999 -> 404 (ожид. 404)"
+    }
+  ],
+  "source": "api-test.bat"
+}

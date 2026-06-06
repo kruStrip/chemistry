@@ -1,0 +1,34 @@
+========================================
+ Chemistry тАФ ╤Г╤Б╤В╨░╨╜╨╛╨▓╨║╨░ ╨╖╨░╨▓╨╕╤Б╨╕╨╝╨╛╤Б╤В╨╡╨╣
+========================================
+
+[1/4] Backend: dotnet restore
+  ╨Ю╨┐╤А╨╡╨┤╨╡╨╗╨╡╨╜╨╕╨╡ ╨┐╤А╨╛╨╡╨║╤В╨╛╨▓ ╨┤╨╗╤П ╨▓╨╛╤Б╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨╕╤П...
+  ╨Т╤Б╨╡ ╨┐╤А╨╛╨╡╨║╤В╤Л ╨╛╨▒╨╜╨╛╨▓╨╗╨╡╨╜╤Л ╨┤╨╗╤П ╨▓╨╛╤Б╤Б╤В╨░╨╜╨╛╨▓╨╗╨╡╨╜╨╕╤П.
+
+[2/4] Backend: deploy/.env
+
+[3/4] Frontend: npm ci
+npm error code EPERM
+npm error syscall unlink
+npm error path C:\chemistry\chemistry-frontend\node_modules\.lightningcss-win32-x64-msvc-C17Qx1LQ\lightningcss.win32-x64-msvc.node
+npm error errno -4048
+npm error [Error: EPERM: operation not permitted, unlink 'C:\chemistry\chemistry-frontend\node_modules\.lightningcss-win32-x64-msvc-C17Qx1LQ\lightningcss.win32-x64-msvc.node'] {
+npm error   errno: -4048,
+npm error   code: 'EPERM',
+npm error   syscall: 'unlink',
+npm error   path: 'C:\\chemistry\\chemistry-frontend\\node_modules\\.lightningcss-win32-x64-msvc-C17Qx1LQ\\lightningcss.win32-x64-msvc.node'
+npm error }
+npm error
+npm error The operation was rejected by your operating system.
+npm error It's possible that the file was already in use (by a text editor or antivirus), or that you lack permissions to access it.
+npm error
+npm error If you believe this might be a permissions issue, please double-check the permissions of the file and its containing directories, or try running the command again as root/Administrator.
+npm error A complete log of this run can be found in: C:\Users\╨Ъ╨░╤В╤П\AppData\Local\npm-cache\_logs\2026-06-05T22_16_35_459Z-debug-0.log
+
+[4/4] Frontend: .env
+
+========================================
+ setup.bat тАФ ╤Г╤Б╨┐╨╡╤И╨╜╨╛
+========================================
+╨б╨╗╨╡╨┤╤Г╤О╤Й╨╕╨╣ ╤И╨░╨│: scripts\docker-up.bat  ╨╕╨╗╨╕  scripts\run.bat

@@ -1,0 +1,124 @@
+# Demo/production-стенд Chemistry для УП.03 этап 3.
+# Локальная сборка образов (без GHCR), фоновый запуск, restart policy.
+# Запуск: docker compose -f docker-compose.demo.yml up --build -d
+services:
+  api:
+    build:
+      context: ..
+      dockerfile: Dockerfile
+    restart: unless-stopped
+    env_file:
+      - ./.env.demo
+    environment:
+      ASPNETCORE_ENVIRONMENT: Development
+      ASPNETCORE_URLS: http://0.0.0.0:5000
+      Swagger__Enabled: "true"
+      Database__ApplyMigrationsOnStartup: "true"
+      Security__EnableRateLimiting: "false"
+      Payments__Provider: Mock
+      Payments__Sandbox: "true"
+      Captcha__Enabled: "false"
+      Shipping__Provider: Mock
+      Shipping__Sandbox: "true"
+      Notifications__Email__Provider: Mock
+      ConnectionStrings__Postgres: Host=postgres;Port=5432;Database=${POSTGRES_DB};Username=${POSTGRES_USER};Password=${POSTGRES_PASSWORD}
+      POSTGRES_CONNECTION_STRING: Host=postgres;Port=5432;Database=${POSTGRES_DB};Username=${POSTGRES_USER};Password=${POSTGRES_PASSWORD}
+      Redis__ConnectionString: redis:6379,password=${REDIS_PASSWORD},abortConnect=false
+      JWT_SECRET: ${JWT_SECRET}
+      DATA_PROTECTION_KEY: ${DATA_PROTECTION_KEY}
+    ports:
+      - "${API_PORT:-5000}:5000"
+    depends_on:
+      postgres:
+        condition: service_healthy
+      redis:
+        condition: service_healthy
+
+  frontend:
+    build:
+      context: ../../chemistry-frontend
+      dockerfile: Dockerfile
+      args:
+        VITE_APP_ENV: demo
+        VITE_API_BASE_URL: http://localhost:${API_PORT:-5000}
+        VITE_APP_TITLE: ${VITE_APP_TITLE:-Chemistry Na Easy}
+        VITE_ENABLE_ANALYTICS: "false"
+        VITE_FEATURE_CAPTCHA: "false"
+        VITE_FEATURE_OAUTH: "false"
+        VITE_FEATURE_PAYMENT_SANDBOX: "true"
+        VITE_PAYMENT_PROVIDER: Mock
+        VITE_MEDIA_BASE_URL: http://localhost:${MINIO_API_PORT:-9000}
+    restart: unless-stopped
+    ports:
+      - "${FRONTEND_PORT:-3000}:80"
+    depends_on:
+      - api
+
+  postgres:
+    image: postgres:15-alpine
+    restart: unless-stopped
+    env_file:
+      - ./.env.demo
+    environment:
+      POSTGRES_DB: ${POSTGRES_DB}
+      POSTGRES_USER: ${POSTGRES_USER}
+      POSTGRES_PASSWORD: ${POSTGRES_PASSWORD}
+    ports:
+      - "${POSTGRES_PORT:-5432}:5432"
+    volumes:
+      - demo_postgres_data:/var/lib/postgresql/data
+      - ./postgres/init/01-init-extensions.sql:/docker-entrypoint-initdb.d/01-init-extensions.sql:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U ${POSTGRES_USER} -d ${POSTGRES_DB}"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  redis:
+    image: redis:7-alpine
+    restart: unless-stopped
+    env_file:
+      - ./.env.demo
+    command:
+      - sh
+      - -c
+      - redis-server --appendonly yes --requirepass "$REDIS_PASSWORD" --maxmemory "$REDIS_MAXMEMORY" --maxmemory-policy allkeys-lru
+    ports:
+      - "127.0.0.1:${REDIS_PORT:-6379}:6379"
+    volumes:
+      - demo_redis_data:/data
+    healthcheck:
+      test: ["CMD-SHELL", "redis-cli -a \"$REDIS_PASSWORD\" ping | grep PONG"]
+      interval: 10s
+      timeout: 5s
+      retries: 10
+
+  minio:
+    image: quay.io/minio/minio:latest
+    restart: unless-stopped
+    env_file:
+      - ./.env.demo
+    command: server /data --console-address ":9001"
+    environment:
+      MINIO_ROOT_USER: ${MINIO_ROOT_USER}
+      MINIO_ROOT_PASSWORD: ${MINIO_ROOT_PASSWORD}
+    ports:
+      - "${MINIO_API_PORT:-9000}:9000"
+      - "${MINIO_CONSOLE_PORT:-9001}:9001"
+    volumes:
+      - demo_minio_data:/data
+
+  minio-init:
+    image: quay.io/minio/mc:latest
+    env_file:
+      - ./.env.demo
+    depends_on:
+      - minio
+    volumes:
+      - ./scripts/minio-init.sh:/scripts/minio-init.sh:ro
+    entrypoint: ["/bin/sh", "/scripts/minio-init.sh"]
+
+volumes:
+  demo_postgres_data:
+  demo_redis_data:
+  demo_minio_data:

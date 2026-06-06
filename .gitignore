@@ -1,0 +1,26 @@
+# Вложенные репозитории — отдельные git-проекты, не включаем в корневой
+/chemistry-backend/
+/chemistry-frontend/
+
+# Секреты
+.env
+.env.*
+!.env.example
+!.env.*.example
+secrets.json
+
+# Служебные / временные
+_methodics_extract.txt
+_stage4_*.txt
+stage4_text.txt
+**/__pycache__/
+**/*.pyc
+**/_tmp_html/
+
+# IDE / ОС
+.idea/
+.vscode/*
+!.vscode/extensions.json
+.DS_Store
+Thumbs.db
+*.log

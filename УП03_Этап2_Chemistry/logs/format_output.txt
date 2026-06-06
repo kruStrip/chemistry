@@ -1,0 +1,15 @@
+src/utils/ru-phone.ts 12ms
+src/utils/schema.ts 20ms
+src/utils/seo.ts 8ms
+src/vite-env.d.ts 7ms
+CONTRIBUTING.md 1301ms
+index.html 286ms
+package.json 215ms
+README.md 35ms
+tsconfig.app.json 8ms
+tsconfig.json 2ms
+tsconfig.node.json 3ms
+
+========================================
+ format.bat тАФ ╤Г╤Б╨┐╨╡╤И╨╜╨╛
+========================================
