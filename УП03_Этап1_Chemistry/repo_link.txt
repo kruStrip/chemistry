@@ -1,2 +1,3 @@
-https://github.com/Studio-Kairos/chemistry-backend.git
-https://github.com/Studio-Kairos/chemistry-frontend.git
+https://github.com/kruStrip/chemistry
+https://github.com/kruStrip/chemistry-backend.git
+https://github.com/kruStrip/chemistry-frontend.git
