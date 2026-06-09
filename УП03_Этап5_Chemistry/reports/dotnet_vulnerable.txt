@@ -1,0 +1,6 @@
+
+Использовались следующие источники:
+   https://api.nuget.org/v3/index.json
+   C:\Program Files (x86)\Microsoft SDKs\NuGetPackages\
+
+Указанный проект "Chemistry.Api" не содержит уязвимых пакетов для текущих источников.

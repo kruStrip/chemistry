@@ -1,0 +1,32 @@
+NOTICE:  drop cascades to 27 other objects
+DETAIL:  drop cascades to extension uuid-ossp
+drop cascades to table "__EFMigrationsHistory"
+drop cascades to table "Kit"
+drop cascades to table "Lead"
+drop cascades to table "Role"
+drop cascades to table "User"
+drop cascades to table "AuditLog"
+drop cascades to table "Notification"
+drop cascades to table "Order"
+drop cascades to table "Parent"
+drop cascades to table "Subscription"
+drop cascades to table "Teacher"
+drop cascades to table "OrderItem"
+drop cascades to table "Payment"
+drop cascades to table "Student"
+drop cascades to table "Course"
+drop cascades to table "Invoice"
+drop cascades to table "CourseGroup"
+drop cascades to table "Enrollment"
+drop cascades to table "Lesson"
+drop cascades to table "Attempt"
+drop cascades to table "EmailContactList"
+drop cascades to table "EmailTemplate"
+drop cascades to table "EmailCampaign"
+drop cascades to table "NewsletterSubscriber"
+drop cascades to table "OrderCourseItem"
+drop cascades to table "CourseReview"
+DROP SCHEMA
+CREATE SCHEMA
+GRANT
+GRANT

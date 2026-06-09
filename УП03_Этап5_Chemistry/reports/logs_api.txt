@@ -1,0 +1,108 @@
+api-1  |    --- End of inner exception stack trace ---
+api-1  |    at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+api-1  |    at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+api-1  |    at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+api-1  |    at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+api-1  |    at Chemistry.Api.Services.LessonReminderWorker.SendDueRemindersAsync(CancellationToken cancellationToken) in /workspace/backend/src/Chemistry.Api/Services/LessonReminderWorker.cs:line 57
+api-1  |    at Chemistry.Api.Services.LessonReminderWorker.ExecuteAsync(CancellationToken stoppingToken) in /workspace/backend/src/Chemistry.Api/Services/LessonReminderWorker.cs:line 34
+api-1  | [16:50:19 WRN] Lesson reminder worker failed.
+api-1  | System.InvalidOperationException: An exception has been raised that is likely due to a transient failure.
+api-1  |  ---> Npgsql.PostgresException (0x80004005): 57P01: terminating connection due to administrator command
+api-1  |    at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+api-1  |    at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+api-1  |    at Npgsql.Internal.NpgsqlConnector.ReadMessageLong(Boolean async, DataRowLoadingMode dataRowLoadingMode, Boolean readingNotifications, Boolean isReadingPrependedMessage)
+api-1  |    at System.Runtime.CompilerServices.PoolingAsyncValueTaskMethodBuilder`1.StateMachineBox`1.System.Threading.Tasks.Sources.IValueTaskSource<TResult>.GetResult(Int16 token)
+api-1  |    at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+api-1  |    at Npgsql.NpgsqlDataReader.NextResult(Boolean async, Boolean isConsuming, CancellationToken cancellationToken)
+api-1  |    at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+api-1  |    at Npgsql.NpgsqlCommand.ExecuteReader(Boolean async, CommandBehavior behavior, CancellationToken cancellationToken)
+api-1  |    at Npgsql.NpgsqlCommand.ExecuteDbDataReaderAsync(CommandBehavior behavior, CancellationToken cancellationToken)
+api-1  |    at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+api-1  |    at Microsoft.EntityFrameworkCore.Storage.RelationalCommand.ExecuteReaderAsync(RelationalCommandParameterObject parameterObject, CancellationToken cancellationToken)
+api-1  |    at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.InitializeReaderAsync(AsyncEnumerator enumerator, CancellationToken cancellationToken)
+api-1  |    at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+api-1  |   Exception data:
+api-1  |     Severity: FATAL
+api-1  |     SqlState: 57P01
+api-1  |     MessageText: terminating connection due to administrator command
+api-1  |     File: postgres.c
+api-1  |     Line: 3211
+api-1  |     Routine: ProcessInterrupts
+api-1  |    --- End of inner exception stack trace ---
+api-1  |    at Npgsql.EntityFrameworkCore.PostgreSQL.Storage.Internal.NpgsqlExecutionStrategy.ExecuteAsync[TState,TResult](TState state, Func`4 operation, Func`4 verifySucceeded, CancellationToken cancellationToken)
+api-1  |    at Microsoft.EntityFrameworkCore.Query.Internal.SingleQueryingEnumerable`1.AsyncEnumerator.MoveNextAsync()
+api-1  |    at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+api-1  |    at Microsoft.EntityFrameworkCore.EntityFrameworkQueryableExtensions.ToListAsync[TSource](IQueryable`1 source, CancellationToken cancellationToken)
+api-1  |    at Chemistry.Api.Services.LessonReminderWorker.SendDueRemindersAsync(CancellationToken cancellationToken) in /workspace/backend/src/Chemistry.Api/Services/LessonReminderWorker.cs:line 57
+api-1  |    at Chemistry.Api.Services.LessonReminderWorker.ExecuteAsync(CancellationToken stoppingToken) in /workspace/backend/src/Chemistry.Api/Services/LessonReminderWorker.cs:line 34
+api-1  | [16:55:33 INF] HTTP POST /api/v1/auth/refresh responded 401 in 182.1436 ms
+api-1  | [16:55:33 INF] HTTP POST /api/v1/auth/refresh responded 401 in 182.1436 ms
+api-1  | [16:55:44 INF] HTTP GET /api/v1/courses responded 200 in 221.2772 ms
+api-1  | [16:55:44 INF] HTTP GET /api/v1/courses responded 200 in 221.2772 ms
+api-1  | [16:58:43 INF] HTTP POST /api/v1/auth/refresh responded 401 in 209.2874 ms
+api-1  | [16:58:43 INF] HTTP POST /api/v1/auth/refresh responded 401 in 209.2874 ms
+api-1  | [16:58:44 INF] HTTP GET /api/v1/courses responded 200 in 1183.2921 ms
+api-1  | [16:58:44 INF] HTTP GET /api/v1/courses responded 200 in 1183.2921 ms
+api-1  | [17:00:48 INF] HTTP GET /api/v1/courses responded 200 in 70.8383 ms
+api-1  | [17:00:48 INF] HTTP GET /api/v1/courses responded 200 in 70.8383 ms
+api-1  |   Determining projects to restore...
+api-1  |   Restored /workspace/backend/src/Chemistry.Domain/Chemistry.Domain.csproj (in 414 ms).
+api-1  |   Restored /workspace/backend/src/Chemistry.Application/Chemistry.Application.csproj (in 1.56 sec).
+api-1  |   Restored /workspace/backend/src/Chemistry.Infrastructure/Chemistry.Infrastructure.csproj (in 1.79 sec).
+api-1  |   Restored /workspace/backend/src/Chemistry.Api/Chemistry.Api.csproj (in 1.91 sec).
+api-1  | [17:02:45 WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+api-1  | [17:02:45 WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+api-1  | [17:02:45 WRN] Overriding HTTP_PORTS '8080' and HTTPS_PORTS ''. Binding to values defined by URLS instead 'http://0.0.0.0:5000'.
+api-1  | [17:02:45 WRN] Overriding HTTP_PORTS '8080' and HTTPS_PORTS ''. Binding to values defined by URLS instead 'http://0.0.0.0:5000'.
+api-1  | [17:02:57 INF] HTTP GET /api/v1/courses responded 200 in 841.0575 ms
+api-1  | [17:02:57 INF] HTTP GET /api/v1/courses responded 200 in 841.0575 ms
+api-1  | [17:03:39 INF] HTTP GET /api/v1/courses responded 200 in 150.7128 ms
+api-1  | [17:03:39 INF] HTTP GET /api/v1/courses responded 200 in 150.7128 ms
+api-1  | [17:03:39 INF] HTTP POST /api/v1/auth/refresh responded 401 in 214.0749 ms
+api-1  | [17:03:39 INF] HTTP POST /api/v1/auth/refresh responded 401 in 214.0749 ms
+api-1  | [17:11:23 INF] HTTP POST /api/v1/auth/refresh responded 401 in 105.5761 ms
+api-1  | [17:11:23 INF] HTTP POST /api/v1/auth/refresh responded 401 in 105.5761 ms
+api-1  | [17:11:24 INF] HTTP GET /api/v1/courses responded 200 in 202.7111 ms
+api-1  | [17:11:24 INF] HTTP GET /api/v1/courses responded 200 in 202.7111 ms
+api-1  |   Determining projects to restore...
+api-1  |   All projects are up-to-date for restore.
+api-1  | [15:31:07 WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+api-1  | [15:31:07 WRN] Storing keys in a directory '/root/.aspnet/DataProtection-Keys' that may not be persisted outside of the container. Protected data will be unavailable when container is destroyed. For more information go to https://aka.ms/aspnet/dataprotectionwarning
+api-1  | [15:31:07 WRN] Overriding HTTP_PORTS '8080' and HTTPS_PORTS ''. Binding to values defined by URLS instead 'http://0.0.0.0:5000'.
+api-1  | [15:31:07 WRN] Overriding HTTP_PORTS '8080' and HTTPS_PORTS ''. Binding to values defined by URLS instead 'http://0.0.0.0:5000'.
+api-1  | [15:34:11 INF] HTTP GET /health responded 200 in 3430.8585 ms
+api-1  | [15:34:11 INF] HTTP GET /health responded 200 in 3430.8585 ms
+api-1  | [15:34:25 INF] HTTP GET /health responded 200 in 18.1664 ms
+api-1  | [15:34:25 INF] HTTP GET /health responded 200 in 18.1664 ms
+api-1  | [15:35:27 INF] HTTP GET /api/v1/kits responded 200 in 7021.9936 ms
+api-1  | [15:35:27 INF] HTTP GET /api/v1/kits responded 200 in 7021.9936 ms
+api-1  | [15:35:53 INF] HTTP GET /api/v1/kits responded 200 in 210.9761 ms
+api-1  | [15:35:53 INF] HTTP GET /api/v1/kits responded 200 in 210.9761 ms
+postgres-1  | 
+postgres-1  | PostgreSQL Database directory appears to contain a database; Skipping initialization
+postgres-1  | 
+postgres-1  | 2026-06-07 14:03:38.281 UTC [1] LOG:  starting PostgreSQL 15.17 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+postgres-1  | 2026-06-07 14:03:38.283 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+postgres-1  | 2026-06-07 14:03:38.284 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+postgres-1  | 2026-06-07 14:03:38.303 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres-1  | 2026-06-07 14:03:38.390 UTC [29] LOG:  database system was shut down at 2026-06-05 22:40:21 UTC
+postgres-1  | 2026-06-07 14:03:38.494 UTC [1] LOG:  database system is ready to accept connections
+postgres-1  | 2026-06-07 14:08:38.581 UTC [27] LOG:  checkpoint starting: time
+postgres-1  | 2026-06-07 14:08:38.671 UTC [27] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.044 s, sync=0.005 s, total=0.093 s; sync files=2, longest=0.003 s, average=0.003 s; distance=0 kB, estimate=0 kB
+postgres-1  | 
+postgres-1  | PostgreSQL Database directory appears to contain a database; Skipping initialization
+postgres-1  | 
+postgres-1  | 2026-06-09 15:27:32.976 UTC [1] LOG:  starting PostgreSQL 15.17 on x86_64-pc-linux-musl, compiled by gcc (Alpine 15.2.0) 15.2.0, 64-bit
+postgres-1  | 2026-06-09 15:27:32.985 UTC [1] LOG:  listening on IPv4 address "0.0.0.0", port 5432
+postgres-1  | 2026-06-09 15:27:32.989 UTC [1] LOG:  listening on IPv6 address "::", port 5432
+postgres-1  | 2026-06-09 15:27:33.046 UTC [1] LOG:  listening on Unix socket "/var/run/postgresql/.s.PGSQL.5432"
+postgres-1  | 2026-06-09 15:27:33.111 UTC [30] LOG:  database system was interrupted; last known up at 2026-06-07 14:08:38 UTC
+postgres-1  | 2026-06-09 15:27:38.804 UTC [30] LOG:  database system was not properly shut down; automatic recovery in progress
+postgres-1  | 2026-06-09 15:27:38.872 UTC [30] LOG:  redo starts at 0/1A782F0
+postgres-1  | 2026-06-09 15:27:38.872 UTC [30] LOG:  invalid record length at 0/1A783D8: wanted 24, got 0
+postgres-1  | 2026-06-09 15:27:38.872 UTC [30] LOG:  redo done at 0/1A783A0 system usage: CPU: user: 0.00 s, system: 0.00 s, elapsed: 0.00 s
+postgres-1  | 2026-06-09 15:27:38.900 UTC [28] LOG:  checkpoint starting: end-of-recovery immediate wait
+postgres-1  | 2026-06-09 15:27:38.996 UTC [28] LOG:  checkpoint complete: wrote 3 buffers (0.0%); 0 WAL file(s) added, 0 removed, 0 recycled; write=0.015 s, sync=0.014 s, total=0.110 s; sync files=2, longest=0.012 s, average=0.007 s; distance=0 kB, estimate=0 kB
+postgres-1  | 2026-06-09 15:27:39.084 UTC [1] LOG:  database system is ready to accept connections
+postgres-1  | 2026-06-09 15:36:43.261 UTC [403] ERROR:  relation "orders" does not exist at character 25
+postgres-1  | 2026-06-09 15:36:43.261 UTC [403] STATEMENT:  SELECT id, user_id FROM orders LIMIT 5;

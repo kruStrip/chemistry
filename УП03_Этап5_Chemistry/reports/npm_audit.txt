@@ -1,0 +1,21 @@
+# npm audit report
+
+brace-expansion  5.0.2 - 5.0.5
+Severity: moderate
+brace-expansion: Large numeric range defeats documented `max` DoS protection - https://github.com/advisories/GHSA-jxxr-4gwj-5jf2
+fix available via `npm audit fix`
+node_modules/brace-expansion
+
+react-router  7.0.0 - 7.14.2
+Severity: high
+React Router vulnerable to DoS via unbounded path expansion in __manifest endpoint - https://github.com/advisories/GHSA-8x6r-g9mw-2r78
+fix available via `npm audit fix`
+node_modules/react-router
+  react-router-dom  7.0.0-pre.0 - 7.14.2
+  Depends on vulnerable versions of react-router
+  node_modules/react-router-dom
+
+3 vulnerabilities (1 moderate, 2 high)
+
+To address all issues, run:
+  npm audit fix

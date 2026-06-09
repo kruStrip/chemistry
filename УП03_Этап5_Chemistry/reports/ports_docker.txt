@@ -1,0 +1,7 @@
+NAME                   IMAGE                              COMMAND                  SERVICE    CREATED      STATUS                    PORTS
+chemistry-api-1        mcr.microsoft.com/dotnet/sdk:8.0   "sh -c 'dotnet resto…"   api        2 days ago   Up 14 minutes             0.0.0.0:5000->5000/tcp, [::]:5000->5000/tcp
+chemistry-grafana-1    grafana/grafana:latest             "/run.sh"                grafana    2 days ago   Up 14 minutes             0.0.0.0:3001->3000/tcp, [::]:3001->3000/tcp
+chemistry-loki-1       grafana/loki:latest                "/usr/bin/loki -conf…"   loki       2 days ago   Up 15 minutes             0.0.0.0:3100->3100/tcp, [::]:3100->3100/tcp
+chemistry-minio-1      quay.io/minio/minio:latest         "/usr/bin/docker-ent…"   minio      2 days ago   Up 15 minutes             0.0.0.0:9000-9001->9000-9001/tcp, [::]:9000-9001->9000-9001/tcp
+chemistry-postgres-1   postgres:15-alpine                 "docker-entrypoint.s…"   postgres   2 days ago   Up 15 minutes (healthy)   0.0.0.0:5432->5432/tcp, [::]:5432->5432/tcp
+chemistry-redis-1      redis:7-alpine                     "docker-entrypoint.s…"   redis      2 days ago   Up 15 minutes (healthy)   0.0.0.0:6379->6379/tcp, [::]:6379->6379/tcp

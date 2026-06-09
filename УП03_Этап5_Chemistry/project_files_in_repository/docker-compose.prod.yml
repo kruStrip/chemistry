@@ -1,0 +1,4 @@
+# Корневой production/demo compose монорепозитория chemistry/.
+# Запуск из c:\chemistry\: docker compose -f docker-compose.prod.yml up --build -d
+include:
+  - path: chemistry-backend/deploy/docker-compose.demo.yml

@@ -1,0 +1,15 @@
+﻿=== Access control test Chemistry ===
+Base URL: http://localhost:5000
+Date: 2026-06-09 18:47:47
+
+User A: id=41 email=sec_a_9284000b@test.local
+User B: id=42 email=sec_b_9284000b@test.local
+
+[TC-05a] GET /api/v1/admin/users no token -> 401 (expected 401)
+[TC-05b] GET /api/v1/admin/users as Student -> 403 (expected 403)
+[TC-05c] GET /api/v1/users/me as Student -> 200 (expected 200)
+
+[TC-06] GET /api/v1/orders/1 as User B -> 403 (expected 403)
+[TC-06b] GET /api/v1/orders/me as User A -> 200 (expected 200)
+
+RESULT: all access checks passed.
