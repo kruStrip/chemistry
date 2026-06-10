@@ -1,0 +1,38 @@
+# Унифицированный CI для этапа 6: check/test/build на push и pull_request.
+name: CI
+
+on:
+  push:
+    branches:
+      - main
+      - develop
+      - feature/**
+      - support/**
+      - release/**
+      - hotfix/**
+  pull_request:
+    branches:
+      - main
+      - develop
+
+jobs:
+  check:
+    name: check
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Set up .NET
+        uses: actions/setup-dotnet@v4
+        with:
+          dotnet-version: 8.0.x
+      - name: Restore
+        run: dotnet restore Chemistry.sln
+      - name: Format verify
+        run: |
+          dotnet format src/Chemistry.Api/Chemistry.Api.csproj --verify-no-changes
+          dotnet format src/Chemistry.Infrastructure/Chemistry.Infrastructure.csproj --verify-no-changes
+      - name: Build Release
+        run: dotnet build Chemistry.sln -c Release --no-restore
+      - name: Unit tests
+        run: dotnet test tests/Chemistry.UnitTests/Chemistry.UnitTests.csproj -c Release --no-build

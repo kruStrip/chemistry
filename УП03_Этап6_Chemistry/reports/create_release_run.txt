@@ -1,0 +1,16 @@
+========================================
+ Chemistry — подготовка релиза v0.1.1
+========================================
+========================================
+ Chemistry — проверка готовности к релизу
+========================================
+dotnet format src/Chemistry.Api/Chemistry.Api.csproj --verify-no-changes
+Архив: ..\УП03_Этап6_Chemistry\release\chemistry_v0.1.1.zip
+Тег для Git: v0.1.1
+Unhandled exception: System.Exception: Restore operation failed.
+   at Microsoft.CodeAnalysis.Tools.CodeFormatter.OpenMSBuildWorkspaceAsync(String solutionOrProjectPath, WorkspaceType workspaceType, Boolean noRestore, Boolean requiresSemantics, String binaryLogPath, Boolean logWorkspaceWarnings, ILogger logger, CancellationToken cancellationToken)
+   at Microsoft.CodeAnalysis.Tools.CodeFormatter.FormatWorkspaceAsync(FormatOptions formatOptions, ILogger logger, CancellationToken cancellationToken, String binaryLogPath)
+   at Microsoft.CodeAnalysis.Tools.FormatCommandCommon.FormatAsync(FormatOptions formatOptions, ILogger`1 logger, CancellationToken cancellationToken)
+   at Microsoft.CodeAnalysis.Tools.Commands.RootFormatCommand.FormatCommandDefaultHandler.InvokeAsync(ParseResult parseResult, CancellationToken cancellationToken)
+   at System.CommandLine.Invocation.InvocationPipeline.InvokeAsync(ParseResult parseResult, CancellationToken cancellationToken)
+make: *** [Makefile:30: check] Error 1
